@@ -354,4 +354,12 @@ begin
   pmNotif.Popup(Mouse.CursorPos.X, Mouse.CursorPos.y+20);
 end;
 
+var
+  test: string;
+initialization
+  test := ExtractFilePath(Application.ExeName)+'store';
+  if not DirectoryExists(test) then
+  begin
+    MkDir(PWideChar(test));
+  end;
 end.
